@@ -12,7 +12,9 @@ class HeroWidget extends StatelessWidget {
             SizedBox(height: MediaQuery.of(context).size.height / 4),
             Text(
               S.of(context).title,
-              style: Theme.of(context).textTheme.display3,
+              style: MediaQuery.of(context).orientation == Orientation.landscape
+                  ? Theme.of(context).textTheme.display4
+                  : Theme.of(context).textTheme.display3,
             ),
             Text(
               S.of(context).sub_title,

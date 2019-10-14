@@ -12,11 +12,13 @@ class GlobalThemes {
       color: Colors.white,
     ),
     textTheme: TextTheme(
+      display4: TextStyle(color: Colors.purpleAccent),
       display3: TextStyle(color: Colors.purpleAccent),
-      display1: TextStyle(color: Colors.white70),
+      display2: TextStyle(color: Colors.purpleAccent),
+      display1: TextStyle(color: Colors.pinkAccent),
+      headline: TextStyle(color: Colors.pinkAccent),
       title: TextStyle(color: Colors.white),
-      body1: TextStyle(color: Colors.white70),
-      headline: TextStyle(color: Colors.purpleAccent),
+      body1: TextStyle(color: Colors.white),
     ),
   );
   static const indexBackgroundColor = Color.fromRGBO(0, 0, 0, 0.4);
