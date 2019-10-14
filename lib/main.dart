@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_blog/generated/i18n.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'package:flutter_blog/views/index/index_widget.dart';
+import 'package:flutter_blog/views/main_widget.dart';
 import 'package:flutter_blog/globals/global_theme.dart';
 
 void main() => runApp(MyApp());
@@ -21,6 +21,6 @@ class MyApp extends StatelessWidget {
             S.delegate.resolution(fallback: Locale('zh', 'CN')), // 强制指定语言
         // route:
         theme: GlobalThemes.appThemeData,
-        home: IndexWidget(),
+        home: MainWidget(),
       );
 }

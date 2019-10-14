@@ -4,14 +4,12 @@ import 'package:flutter_blog/generated/i18n.dart';
 class HeroWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-              image: ExactAssetImage('res/images/hero_bg.jpg'),
-              fit: BoxFit.cover),
-        ),
+        height: MediaQuery.of(context).size.height -
+            Scaffold.of(context).appBarMaxHeight,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
           children: <Widget>[
+            SizedBox(height: MediaQuery.of(context).size.height / 4),
             Text(
               S.of(context).title,
               style: Theme.of(context).textTheme.display3,
@@ -22,5 +20,6 @@ class HeroWidget extends StatelessWidget {
             )
           ],
         ),
+        color: Colors.transparent,
       );
 }

@@ -1,5 +1,7 @@
 {
   "appbar_title": "Prime",
   "title": "I'm Prime",
-  "sub_title": "十方三世,尽在一念"
+  "sub_title": "十方三世,尽在一念",
+  "news_title": "最新动态",
+  "archive_title": "专题"
 }

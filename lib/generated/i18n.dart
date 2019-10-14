@@ -22,6 +22,8 @@ class S implements WidgetsLocalizations {
   TextDirection get textDirection => TextDirection.ltr;
 
   String get appbar_title => "Prime";
+  String get archive_title => "Archives";
+  String get news_title => "News";
   String get sub_title => "十方三世,尽在一念";
   String get title => "I'm Prime";
 }
@@ -39,7 +41,11 @@ class $zh_CN extends S {
   @override
   String get appbar_title => "Prime";
   @override
+  String get archive_title => "专题";
+  @override
   String get sub_title => "十方三世,尽在一念";
+  @override
+  String get news_title => "最新动态";
   @override
   String get title => "I'm Prime";
 }
