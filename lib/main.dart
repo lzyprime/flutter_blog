@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         localeResolutionCallback:
             S.delegate.resolution(fallback: Locale('zh', 'CN')), // 强制指定语言
         // route:
-        theme: GlobalThemes.appThemeData,
+        theme: GlobalThemes.blueThemeData,
         home: MainWidget(),
       );
 }

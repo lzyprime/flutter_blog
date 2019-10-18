@@ -1,14 +1,15 @@
 import 'dart:math';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_blog/generated/i18n.dart';
 import 'package:flutter_blog/globals/global_theme.dart';
 
-class ArchiveWidget extends StatelessWidget {
+class CategoryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Material(
-        color: GlobalThemes.indexBackgroundColor,
+//        color: GlobalThemes.indexBackgroundColor,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
@@ -19,19 +20,31 @@ class ArchiveWidget extends StatelessWidget {
             ),
             Wrap(
               children: <Widget>[
-                archiveBody(context),
-                archiveBody(context),
-                archiveBody(context),
-                archiveBody(context),
-                archiveBody(context),
-                archiveBody(context),
+                _categoryBody(context,
+                    title: "title1", description: "iufnvinbivmifdsvnfkd"),
+                _categoryBody(context,
+                    title: "title2", bgImage: "res/images/bg.jpg"),
+                _categoryBody(context,
+                    title: "title3",
+                    description: "iufnvinbivmifdsvnfkd",
+                    bgImage: "res/images/bg.jpg"),
+                _categoryBody(context, title: "title4", bgColor: Colors.brown),
+                _categoryBody(context, title: "title5", bgColor: Colors.blue),
+                _categoryBody(context,
+                    title: "title6",
+                    bgImage: "res/images/bg.jpg",
+                    bgColor: Colors.indigo),
               ],
             ),
           ],
         ),
       );
 
-  Widget archiveBody(BuildContext context) {
+  Widget _categoryBody(BuildContext context,
+      {@required String title,
+      String description,
+      String bgImage,
+      Color bgColor = Colors.black}) {
     return Padding(
       padding: const EdgeInsets.all(20),
       child: ConstrainedBox(
@@ -50,28 +63,30 @@ class ArchiveWidget extends StatelessWidget {
                   : 1.2),
         ),
         child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-                image: ExactAssetImage('res/images/bg.jpg'),
-                fit: BoxFit.cover
-            ),
-          ),
+          decoration: bgImage == null
+              ? null
+              : BoxDecoration(
+                  image: DecorationImage(
+                      image: ExactAssetImage('res/images/bg.jpg'),
+                      fit: BoxFit.cover),
+                ),
           child: Card(
             margin: EdgeInsets.all(0),
-          color: Colors.black54,
+            color: bgColor.withOpacity(0.54),
             child: Padding(
               padding: const EdgeInsets.all(20),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.all(10),
                     child: Text(
-                      "title",
+                      title,
                       style: Theme.of(context).textTheme.headline,
                     ),
                   ),
                   Text(
-                    "description" * Random().nextInt(40),
+                    description ?? "",
                     style: Theme.of(context).textTheme.body1,
                   )
                 ],

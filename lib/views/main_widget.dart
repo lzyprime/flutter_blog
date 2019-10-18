@@ -1,6 +1,8 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_blog/generated/i18n.dart';
-import 'package:flutter_blog/views/index/index_widget.dart';
+import 'package:flutter_blog/views/index_widget.dart';
 
 class MainWidget extends StatefulWidget {
   @override
@@ -13,28 +15,10 @@ class _MainState extends State<MainWidget> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          title: Text(S.of(context).appbar_title),
-          actions: <Widget>[
-            ToggleButtons(
-              isSelected: [true],
-              children: <Widget>[
-                Text('主页'),
-              ],
-              onPressed: (index) {},
-            )
-          ],
+        appBar: AppBar(title: Text(S.of(context).appbar_title), elevation: 20),
+        body: PageView(
+          children: <Widget>[Text('ok')],
         ),
-        body: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: ExactAssetImage("res/images/bg.jpg"),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: PageView(
-              children: <Widget>[IndexWidget()],
-            )),
         extendBodyBehindAppBar: true,
       );
 }
