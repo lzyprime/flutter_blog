@@ -1,10 +1,8 @@
-import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_blog/generated/i18n.dart';
-import 'package:flutter_blog/globals/global_theme.dart';
 
 class CategoryWidget extends StatelessWidget {
   @override

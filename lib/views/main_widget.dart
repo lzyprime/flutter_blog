@@ -1,7 +1,5 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_blog/generated/i18n.dart';
 import 'package:flutter_blog/views/index_widget.dart';
 
 class MainWidget extends StatefulWidget {
@@ -14,11 +12,9 @@ class _MainState extends State<MainWidget> {
   PageController _pageController = PageController();
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(title: Text(S.of(context).appbar_title), elevation: 20),
-        body: PageView(
-          children: <Widget>[Text('ok')],
-        ),
-        extendBodyBehindAppBar: true,
-      );
+  Widget build(BuildContext context) => PageView(
+    children: <Widget>[
+      IndexWidget(),
+    ],
+  );
 }
